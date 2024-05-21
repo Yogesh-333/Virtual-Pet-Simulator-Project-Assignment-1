@@ -15,6 +15,11 @@ namespace VirtualPet
             string name = Console.ReadLine();
 
             PetDetails pet = new PetDetails(name,type);
-            Console.WriteLine($"Welcome, {pet.Name} the {pet.Type}!");        }
+            Console.WriteLine($"Welcome, {pet.Name} the {pet.Type}!");
+
+            bool running = true;
+
+            while (running) { }
+        }
     }
 }
