@@ -7,40 +7,53 @@ using System.Xml.Linq;
 
 namespace Virtual_Pet_Simulator
 {
-    internal class PetAction
+     class PetAction
     {
-        PetDetails details= new PetDetails();
-          public void Feed(int hunger,int health, string name)
+        public int Hunger { get; set; }
+        public int Happiness { get; set; }
+        public int Health { get; set; }
+
+        public PetAction()
         {
-            hunger = Math.Max(hunger - 2, 0);
-            health = Math.Min(health + 1, 10);
+            Hunger = 5;
+            Happiness = 5;
+            Health = 5;
+        }
+
+
+
+        public void Feed( string name)
+        {
+            Hunger = Math.Max(Hunger - 2, 0);
+            Health = Math.Min(Health + 1, 10);
             Console.WriteLine($"{name} is fed. Hunger decreased, health slightly increased.");
         }
 
-        public void Play(int hunger, int happiness, string name)
+        public void Play(string name)
         {
-            happiness = Math.Min(happiness + 2, 10);
-            hunger = Math.Min(hunger + 1, 10);
+            Happiness = Math.Min(Happiness + 2, 10);
+            Hunger = Math.Min(Hunger + 1, 10);
             Console.WriteLine($"{name} played. Happiness increased, hunger slightly increased.");
         }
 
-        public void Rest(int happiness, int health, string name)
+        public void Rest(string name)
         {
-            health = Math.Min(health + 2, 10);
-            happiness = Math.Max(happiness - 1, 0);
+            Health = Math.Min(Health + 2, 10);
+            Happiness = Math.Max(Happiness - 1, 0);
             Console.WriteLine($"{name} is resting. Health improved, happiness slightly decreased.");
         }
 
-        public void Status(int hunger, int health,int happiness, string name)
+        public void Status(string name)
         {
             Console.WriteLine($"\n{name}'s Status:");
-            Console.WriteLine($"Hunger: {hunger}/10");
-            Console.WriteLine($"Happiness: {happiness}/10");
-            Console.WriteLine($"Health: {health}/10");
-            if (hunger >= 8) Console.WriteLine($"{name} is very hungry!");
-            if (happiness <= 2) Console.WriteLine($"{name} is very unhappy!");
-            if (health <= 2) Console.WriteLine($"{name} is in poor health!");
+            Console.WriteLine($"Hunger: {Hunger}/10");
+            Console.WriteLine($"Happiness: {Happiness}/10");
+            Console.WriteLine($"Health: {Health}/10");
+            if (Hunger >= 8) Console.WriteLine($"{name} is very hungry!");
+            if (Happiness <= 2) Console.WriteLine($"{name} is very unhappy!");
+            if (Health <= 2) Console.WriteLine($"{name} is in poor health!");
         }
+
 
     }
 }
