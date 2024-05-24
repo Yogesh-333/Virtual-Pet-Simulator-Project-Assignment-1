@@ -50,6 +50,9 @@ namespace Virtual_Pet_Simulator
             ConsoleUtils.WriteColored($"Hunger: {Hunger}/10", ConsoleColor.Red);
             ConsoleUtils.WriteColored($"Happiness: {Happiness}/10", ConsoleColor.Magenta);
             ConsoleUtils.WriteColored($"Health: {Health}/10", ConsoleColor.Green);
+            if (Hunger >= 10 && Hunger < 8) ConsoleUtils.WriteColored($"{name} is very hungry so play and sleep action not allowed!", ConsoleColor.Red);
+            if (Happiness >=0 && < 2 ) ConsoleUtils.WriteColored($"{name} is very unhappy so feed and sleep action not allowed!", ConsoleColor.Red);
+            if (Health >=0 && < 2) ConsoleUtils.WriteColored($"{name} is in poor health so play action is not allowed!", ConsoleColor.Red);
             if (Hunger >= 8) ConsoleUtils.WriteColored($"{name} is very hungry!", ConsoleColor.Red);
             if (Happiness <= 2) ConsoleUtils.WriteColored($"{name} is very unhappy!", ConsoleColor.Red);
             if (Health <= 2) ConsoleUtils.WriteColored($"{name} is in poor health!", ConsoleColor.Red);
