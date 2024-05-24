@@ -7,7 +7,8 @@ namespace VirtualPet
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the Virtual Pet Simulator!");
+            ConsoleUtils.WriteColored("Welcome to the Virtual Pet Simulator!", ConsoleColor.Cyan);
+
             Console.Write("Choose a pet type (e.g., cat, dog, rabbit): ");
             string type = Console.ReadLine();
 
@@ -16,17 +17,18 @@ namespace VirtualPet
 
             PetDetails pet = new PetDetails(name,type);
             PetAction action = new PetAction();
-            Console.WriteLine($"Welcome, {pet.Name} the {pet.Type}!");
-
+            ConsoleUtils.WriteColored($"Welcome, {pet.Name} the {pet.Type}!", ConsoleColor.Green);
+            ConsoleUtils.DrawPet(type);
             bool running = true;
 
             while (running) {
-                action.Status(name);                
-                Console.WriteLine("\nChoose an action:");
-                Console.WriteLine("1. Feed");
-                Console.WriteLine("2. Play");
-                Console.WriteLine("3. Rest");
-                Console.WriteLine("4. Exit");
+                action.Status(name);
+                ConsoleUtils.WriteColored("\nChoose an action:", ConsoleColor.Cyan);
+               // ConsoleUtils.DrawPetEmoji(type);// emoji not working 
+                ConsoleUtils.WriteColored("1. Feed", ConsoleColor.Green);
+                ConsoleUtils.WriteColored("2. Play", ConsoleColor.Yellow);
+                ConsoleUtils.WriteColored("3. Rest", ConsoleColor.Blue);
+                ConsoleUtils.WriteColored("4. Exit", ConsoleColor.Red);
                 string choice = Console.ReadLine();
                 Console.Clear();
 
@@ -43,10 +45,10 @@ namespace VirtualPet
                         break;
                     case "4":
                         running = false;
-                        Console.WriteLine("Goodbye!");
+                        ConsoleUtils.WriteColored("Goodbye!", ConsoleColor.Cyan);
                         continue;
                     default:
-                        Console.WriteLine("Invalid choice. Try again.");
+                        ConsoleUtils.WriteColored("Invalid choice. Try again.", ConsoleColor.Red);
                         continue;
                 }
             }

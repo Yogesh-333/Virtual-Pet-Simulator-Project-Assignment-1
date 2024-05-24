@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using VirtualPet;
 
 namespace Virtual_Pet_Simulator
 {
@@ -26,34 +27,34 @@ namespace Virtual_Pet_Simulator
         {
             Hunger = Math.Max(Hunger - 2, 0);
             Health = Math.Min(Health + 1, 10);
-            Console.WriteLine($"{name} is fed. Hunger decreased, health slightly increased.");
+            ConsoleUtils.WriteColored($"{name} is fed. Hunger decreased, health slightly increased.", ConsoleColor.Green);
         }
 
         public void Play(string name)
         {
             Happiness = Math.Min(Happiness + 2, 10);
             Hunger = Math.Min(Hunger + 1, 10);
-            Console.WriteLine($"{name} played. Happiness increased, hunger slightly increased.");
+            ConsoleUtils.WriteColored($"{name} played. Happiness increased, hunger slightly increased.", ConsoleColor.Yellow);
         }
 
         public void Rest(string name)
         {
             Health = Math.Min(Health + 2, 10);
             Happiness = Math.Max(Happiness - 1, 0);
-            Console.WriteLine($"{name} is resting. Health improved, happiness slightly decreased.");
+            ConsoleUtils.WriteColored($"{name} is resting. Health improved, happiness slightly decreased.", ConsoleColor.Blue);
         }
 
         public void Status(string name)
         {
-            Console.WriteLine($"\n{name}'s Status:");
-            Console.WriteLine($"Hunger: {Hunger}/10");
-            Console.WriteLine($"Happiness: {Happiness}/10");
-            Console.WriteLine($"Health: {Health}/10");
-            if (Hunger >= 8) Console.WriteLine($"{name} is very hungry!");
-            if (Happiness <= 2) Console.WriteLine($"{name} is very unhappy!");
-            if (Health <= 2) Console.WriteLine($"{name} is in poor health!");
+            ConsoleUtils.WriteColored($"\n{name}'s Status:", ConsoleColor.Cyan);
+            ConsoleUtils.WriteColored($"Hunger: {Hunger}/10", ConsoleColor.Red);
+            ConsoleUtils.WriteColored($"Happiness: {Happiness}/10", ConsoleColor.Magenta);
+            ConsoleUtils.WriteColored($"Health: {Health}/10", ConsoleColor.Green);
+            if (Hunger >= 8) ConsoleUtils.WriteColored($"{name} is very hungry!", ConsoleColor.Red);
+            if (Happiness <= 2) ConsoleUtils.WriteColored($"{name} is very unhappy!", ConsoleColor.Red);
+            if (Health <= 2) ConsoleUtils.WriteColored($"{name} is in poor health!", ConsoleColor.Red);
         }
 
 
-    }
+     }
 }
