@@ -21,8 +21,11 @@ namespace VirtualPet
             ConsoleUtils.DrawPet(type);
             bool running = true;
 
+            int hoursPassed = 0;
+
             while (running) {
                 action.Status(name);
+                ConsoleUtils.WriteColored($"\nHours passed: {hoursPassed}", ConsoleColor.Yellow);
                 ConsoleUtils.WriteColored("\nChoose an action:", ConsoleColor.Cyan);
                // ConsoleUtils.DrawPetEmoji(type);// emoji not working 
                 ConsoleUtils.WriteColored("1. Feed", ConsoleColor.Green);
@@ -51,6 +54,8 @@ namespace VirtualPet
                         ConsoleUtils.WriteColored("Invalid choice. Try again.", ConsoleColor.Red);
                         continue;
                 }
+                action.TimePasses();
+                hoursPassed++;
             }
         }
     }

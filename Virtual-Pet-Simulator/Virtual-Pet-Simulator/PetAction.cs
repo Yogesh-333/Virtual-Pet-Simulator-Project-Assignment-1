@@ -55,6 +55,14 @@ namespace Virtual_Pet_Simulator
             if (Health <= 2) ConsoleUtils.WriteColored($"{name} is in poor health!", ConsoleColor.Red);
         }
 
+        public void TimePasses()
+        {
+            Hunger = Math.Min(Hunger + 1, 10);
+            Happiness = Math.Max(Happiness - 1, 0);
+            if (Hunger >= 8) Health = Math.Max(Health - 1, 0);
+            if (Happiness <= 2) Health = Math.Max(Health - 1, 0);
+            ConsoleUtils.WriteColored("An hour has passed...", ConsoleColor.Yellow);
+        }
 
-     }
+    }
 }
