@@ -1,5 +1,5 @@
 # Virtual-Pet-Simulator-Project-Assignment-1
-##Overview
+## Overview
 This is a simple console application written in C# that simulates caring for a virtual pet. Users can choose a type of pet, give it a name, and perform various actions to take care of it, such as feeding, playing, and resting. The pet's stats, including hunger, happiness, and health, are tracked and updated based on the user's actions and the passage of time.
 
 Features
