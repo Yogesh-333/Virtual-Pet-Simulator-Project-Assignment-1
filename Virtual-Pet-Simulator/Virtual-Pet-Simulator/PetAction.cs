@@ -44,7 +44,7 @@ namespace Virtual_Pet_Simulator
             ConsoleUtils.WriteColored($"{name} is resting. Health improved, happiness slightly decreased.", ConsoleColor.Blue);
         }
 
-        public void Status(string name)
+        public void Status(string name) //Function to show the status of the pet
         {
             ConsoleUtils.WriteColored($"\n{name}'s Status:", ConsoleColor.Cyan);
             ConsoleUtils.WriteColored($"Hunger: {Hunger}/10", ConsoleColor.Red);
@@ -57,7 +57,7 @@ namespace Virtual_Pet_Simulator
 
         public void TimePasses()
         {
-            Hunger = Math.Min(Hunger + 1, 10);
+            Hunger = Math.Min(Hunger + 1, 10);// this action is added just to denote that for past 1 hour the pet has reduced in all aspects
             Happiness = Math.Max(Happiness - 1, 0);
             if (Hunger >= 8) Health = Math.Max(Health - 1, 0);
             if (Happiness <= 2) Health = Math.Max(Health - 1, 0);
