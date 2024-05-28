@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 using VirtualPet;
 
 namespace Virtual_Pet_Simulator
 {
-     class PetAction
+    class PetAction
     {
         public int Hunger { get; set; }
         public int Happiness { get; set; }
@@ -21,9 +16,7 @@ namespace Virtual_Pet_Simulator
             Health = 5;
         }
 
-
-
-        public void Feed( string name)
+        public void Feed(string name)
         {
             Hunger = Math.Max(Hunger - 2, 0);
             Health = Math.Min(Health + 1, 10);
@@ -32,6 +25,17 @@ namespace Virtual_Pet_Simulator
 
         public void Play(string name)
         {
+            if (Hunger >= 8)
+            {
+                ConsoleUtils.WriteColored($"{name} is too hungry to play! Please feed your pet.", ConsoleColor.Red);
+                return;
+            }
+            if (Health <= 2)
+            {
+                ConsoleUtils.WriteColored($"{name} is in poor health and cannot play! Please let your pet rest.", ConsoleColor.Red);
+                return;
+            }
+
             Happiness = Math.Min(Happiness + 2, 10);
             Hunger = Math.Min(Hunger + 1, 10);
             ConsoleUtils.WriteColored($"{name} played. Happiness increased, hunger slightly increased.", ConsoleColor.Yellow);
@@ -50,12 +54,19 @@ namespace Virtual_Pet_Simulator
             ConsoleUtils.WriteColored($"Hunger: {Hunger}/10", ConsoleColor.Red);
             ConsoleUtils.WriteColored($"Happiness: {Happiness}/10", ConsoleColor.Magenta);
             ConsoleUtils.WriteColored($"Health: {Health}/10", ConsoleColor.Green);
-            if (Hunger >= 10 && Hunger < 8) ConsoleUtils.WriteColored($"{name} is very hungry so play and sleep action not allowed!", ConsoleColor.Red);
-            if (Happiness >=0 && < 2 ) ConsoleUtils.WriteColored($"{name} is very unhappy so feed and sleep action not allowed!", ConsoleColor.Red);
-            if (Health >=0 && < 2) ConsoleUtils.WriteColored($"{name} is in poor health so play action is not allowed!", ConsoleColor.Red);
-            if (Hunger >= 8) ConsoleUtils.WriteColored($"{name} is very hungry!", ConsoleColor.Red);
-            if (Happiness <= 2) ConsoleUtils.WriteColored($"{name} is very unhappy!", ConsoleColor.Red);
-            if (Health <= 2) ConsoleUtils.WriteColored($"{name} is in poor health!", ConsoleColor.Red);
+
+            if (Hunger >= 8)
+            {
+                ConsoleUtils.WriteColored($"{name} is very hungry! Feed your pet to allow playing.", ConsoleColor.Red);
+            }
+            if (Happiness <= 2)
+            {
+                ConsoleUtils.WriteColored($"{name} is very unhappy! Play with your pet to improve happiness.", ConsoleColor.Red);
+            }
+            if (Health <= 2)
+            {
+                ConsoleUtils.WriteColored($"{name} is in poor health! Rest your pet to improve its health.", ConsoleColor.Red);
+            }
         }
 
         public void TimePasses()
@@ -66,6 +77,5 @@ namespace Virtual_Pet_Simulator
             if (Happiness <= 2) Health = Math.Max(Health - 1, 0);
             ConsoleUtils.WriteColored("An hour has passed...", ConsoleColor.Yellow);
         }
-
     }
 }

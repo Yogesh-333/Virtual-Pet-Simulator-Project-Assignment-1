@@ -36,10 +36,9 @@
               "RelativeDocumentMoniker": "Virtual-Pet-Simulator\\ConsoleUtil.cs",
               "ToolTip": "D:\\Conestoga\\Software programming - brasil\\Virtual-Pet-Simulator-Project-Assignment-1\\Virtual-Pet-Simulator\\Virtual-Pet-Simulator\\ConsoleUtil.cs",
               "RelativeToolTip": "Virtual-Pet-Simulator\\ConsoleUtil.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAQwBwAAAAaAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T08:09:37.612Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-24T08:09:37.612Z"
             },
             {
               "$type": "Document",
@@ -47,9 +46,9 @@
               "Title": "PetAction.cs",
               "DocumentMoniker": "D:\\Conestoga\\Software programming - brasil\\Virtual-Pet-Simulator-Project-Assignment-1\\Virtual-Pet-Simulator\\Virtual-Pet-Simulator\\PetAction.cs",
               "RelativeDocumentMoniker": "Virtual-Pet-Simulator\\PetAction.cs",
-              "ToolTip": "D:\\Conestoga\\Software programming - brasil\\Virtual-Pet-Simulator-Project-Assignment-1\\Virtual-Pet-Simulator\\Virtual-Pet-Simulator\\PetAction.cs",
-              "RelativeToolTip": "Virtual-Pet-Simulator\\PetAction.cs",
-              "ViewState": "AQIAAC4AAAAAAAAAAAAwwDsAAAAoAAAA",
+              "ToolTip": "D:\\Conestoga\\Software programming - brasil\\Virtual-Pet-Simulator-Project-Assignment-1\\Virtual-Pet-Simulator\\Virtual-Pet-Simulator\\PetAction.cs*",
+              "RelativeToolTip": "Virtual-Pet-Simulator\\PetAction.cs*",
+              "ViewState": "AQIAADYAAAAAAAAAAAAkwFEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-21T22:28:04.626Z",
               "EditorCaption": ""
@@ -64,8 +63,7 @@
               "RelativeToolTip": "Virtual-Pet-Simulator\\PetDetails.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T02:29:24.076Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-21T02:29:24.076Z"
             },
             {
               "$type": "Document",
@@ -77,8 +75,7 @@
               "RelativeToolTip": "Virtual-Pet-Simulator\\Program.cs",
               "ViewState": "AQIAACgAAAAAAAAAAAAQwDoAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-20T23:25:07.021Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-20T23:25:07.021Z"
             }
           ]
         }
